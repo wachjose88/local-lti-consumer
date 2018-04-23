@@ -1,5 +1,5 @@
 # Local LTI Consumer
-This is a LTI consumer which can run on your local machine. It can be used to test LTI providers locally by writing testcases. It is based on python3 and django 1.11.
+This is a [LTI](https://www.imsglobal.org/activity/learning-tools-interoperability) consumer which can run on your local machine. It can be used to test LTI providers locally by writing testcases. It is based on [python3](https://www.python.org/) and [Django LTS](https://www.djangoproject.com/).
 
 ## Requirements
 * certifi==2018.1.18
