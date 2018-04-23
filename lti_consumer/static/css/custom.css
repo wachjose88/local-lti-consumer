@@ -1,0 +1,12 @@
+.input-group-addon {
+    min-width: 150px;
+    text-align: left;
+}
+
+.action-small {
+    min-width: 90px;
+}
+
+.action-big {
+    min-width: 210px;
+}

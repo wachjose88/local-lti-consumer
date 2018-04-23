@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% comment %}
+Copyright (c) 2018 Josef Wachtler
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+This template shows a testcase and its launch parameters. 
+{% endcomment %}
+{% load i18n %}
+{% block title %}{% trans "Testcase" %}: {{ testcase.name|truncatechars:42 }}{% endblock %}
+{% block content %}
+
+    <div class="page-header">
+        <h1>{% trans "Testcase" %}: {{ testcase.name|truncatechars:42 }}</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <ul class="lead">
+                <li>{% trans "Published at" %}: {{ testcase.published_at }}</li>
+                <li>{% trans "Launch URL" %}: {{ testcase.launch_url }}</li>
+                {% if testcase.consumer_key %}
+                    <li>{% trans "Consumer key" %}: {{ testcase.consumer_key }}</li>
+                {% endif %}
+                {% if testcase.consumer_secret %}
+                    <li>{% trans "Consumer secret" %}: {{ testcase.consumer_secret }}</li>
+                {% endif %}
+            </ul>
+            {% if error_detail %}
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ error_name }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>{{ error_detail }}</p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            {% if launch_url %}
+            <form action="{{ launch_url }}"
+                  name="ltiLaunchForm"
+                  id="ltiLaunchForm"
+                  method="POST"
+                  target="_blank"
+                  encType="application/x-www-form-urlencoded"
+                  onsubmit="setTimeout(function(){window.location.reload();},10)">
+                {% for key, value in launch_data.items %}
+                    <input type="hidden" name="{{ key }}" value="{{ value }}"/>
+                {% endfor %}
+            {% endif %}
+                <div class="btn-group-vertical btn-group-lg" role="group" aria-label="{% trans "Actions" %}">
+                    {% if launch_url %}
+                    <button type="submit" class="btn btn-primary action-big">{% trans "Run" %}</button>
+                    {% endif %}
+                    <a class="btn btn-success action-big" href="{% url 'consumer.views.edit_testcase' testcase_id=testcase.id %}" role="button">{% trans "Edit" %}</a>
+
+                    <a class="btn btn-warning action-big" href="{% url 'consumer.views.delete_testcase' testcase_id=testcase.id %}" role="button">{% trans "Delete" %}</a>
+                </div>
+            <br /><br />
+            {% if launch_url %}</form>{% endif %}
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{% trans "Launch Parameter" %}</h3>
+        </div>
+        <div class="panel-body">
+            <a class="btn btn-success action-big" href="{% url 'consumer.views.create_launch_param' testcase_id=testcase.id %}" role="button">{% trans "Create Launch Parameter" %}</a>
+        </div>
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>{% trans "Name" %}</th>
+                <th>{% trans "Value" %}</th>
+                <th>{% trans "Actions" %}</th>
+            </tr>
+                {% for lp in testcase.launchparam_set.all %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ lp.name }}</td>
+                        <td>{{ lp.value }}</td>
+                        <td>
+                            <div class="btn-group btn-group-xs" role="group" aria-label="{% trans "Actions" %}">
+                                <a class="btn btn-success action-small" href="{% url 'consumer.views.edit_launch_param' testcase_id=testcase.id launch_param_id=lp.id %}" role="button">{% trans "Edit" %}</a>
+                                <a class="btn btn-warning action-small" href="{% url 'consumer.views.delete_launch_param' testcase_id=testcase.id launch_param_id=lp.id %}" role="button">{% trans "Delete" %}</a>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
