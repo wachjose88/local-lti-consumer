@@ -27,7 +27,7 @@ Now create a database:
 python3 manage.py migrate
 ```
 
-Finally run the server. It is important to specify a local port by replacing PORT. This port must be differ from the port used for the LTI provider you want to test.
+Finally run the server. It is important to specify a local port by replacing PORT. This port must be different from the port used for the LTI provider you want to test.
 
 ```
 python3 manage.py runserver PORT
