@@ -2,17 +2,7 @@
 This is a [LTI](https://www.imsglobal.org/activity/learning-tools-interoperability) consumer which can run on your local machine. It can be used to test LTI providers locally by writing testcases. It is based on [python3](https://www.python.org/) and [Django LTS](https://www.djangoproject.com/).
 
 ## Requirements
-* certifi==2018.1.18
-* chardet==3.0.4
-* Django==1.11.9
-* idna==2.6
-* lti==0.9.2
-* lxml==4.1.1
-* oauthlib==2.0.6
-* pytz==2017.3
-* requests==2.18.4
-* requests-oauthlib==0.8.0
-* urllib3==1.22
+Please see requirements.txt
 
 ## Install and Run
 At first download or clone this repository and install the requirements.
