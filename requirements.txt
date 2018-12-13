@@ -8,4 +8,4 @@ oauthlib==2.0.6
 pytz==2017.3
 requests>=2.0.0
 requests-oauthlib==0.8.0
-urllib3==1.22
+urllib3
