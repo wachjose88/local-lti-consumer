@@ -91,7 +91,9 @@ class LaunchParam(models.Model):
         name -- the name of the launch parameter
         value -- the value for the named launch parameter
     '''
-    testcase = models.ForeignKey(Testcase, verbose_name=_('Testcase'))
+    testcase = models.ForeignKey(Testcase,
+                                 on_delete=models.CASCADE,
+                                 verbose_name=_('Testcase'))
     name = models.CharField(max_length=200, verbose_name=_('Name'))
     value = models.CharField(max_length=200, blank=True,
                              verbose_name=_('Value'))
