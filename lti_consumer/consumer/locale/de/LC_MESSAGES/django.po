@@ -1,0 +1,201 @@
+# Copyright (c) 2018 Josef Wachtler
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-11 11:39+0100\n"
+"PO-Revision-Date: 2021-11-11 10:46+0100\n"
+"Last-Translator: Josef Wachtler <josef.wachtler@gmail.com>\n"
+"Language-Team: Josef Wachtler <josef.wachtler@gmail.com>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: consumer/apps.py:34 consumer/templates/base.html:32
+#: consumer/templates/base.html:55 consumer/templates/consumer/index.html:29
+msgid "LTI Consumer"
+msgstr "LTI Konsument"
+
+#: consumer/models.py:38 consumer/models.py:63 consumer/models.py:97
+#: consumer/templates/consumer/show_testcase.html:95
+msgid "Name"
+msgstr "Name"
+
+#: consumer/models.py:39
+msgid "Required"
+msgstr "Benötigt"
+
+#: consumer/models.py:48
+msgid "Default Launch Parameter"
+msgstr "Standard Launchparameter"
+
+#: consumer/models.py:49
+msgid "Default Launch Parameters"
+msgstr "Standard Launchparameter"
+
+#: consumer/models.py:64 consumer/templates/consumer/show_testcase.html:37
+msgid "Launch URL"
+msgstr "Launch URL"
+
+#: consumer/models.py:67 consumer/templates/consumer/show_testcase.html:39
+msgid "Consumer key"
+msgstr "Konsumentenschlüssel"
+
+#: consumer/models.py:70 consumer/templates/consumer/show_testcase.html:42
+msgid "Consumer secret"
+msgstr "Konsumentengeheimnis"
+
+#: consumer/models.py:72 consumer/templates/consumer/list_testcase.html:39
+#: consumer/templates/consumer/show_testcase.html:36
+msgid "Published at"
+msgstr "Veröffentlicht am"
+
+#: consumer/models.py:81 consumer/models.py:96
+#: consumer/templates/consumer/show_testcase.html:26
+#: consumer/templates/consumer/show_testcase.html:30
+msgid "Testcase"
+msgstr "Testfall"
+
+#: consumer/models.py:82 consumer/templates/consumer/list_testcase.html:38
+msgid "Testcases"
+msgstr "Testfälle"
+
+#: consumer/models.py:99 consumer/templates/consumer/show_testcase.html:96
+msgid "Value"
+msgstr "Wert"
+
+#: consumer/models.py:108 consumer/templates/consumer/show_testcase.html:87
+msgid "Launch Parameter"
+msgstr "Launchparameter"
+
+#: consumer/models.py:109
+msgid "Launch Parameters"
+msgstr "Launchparameter"
+
+#: consumer/templates/base.html:60
+#: consumer/templates/consumer/create_testcase.html:26
+#: consumer/templates/consumer/create_testcase.html:29
+#: consumer/templates/consumer/create_testcase.html:62
+#: consumer/templates/consumer/index.html:33
+msgid "Create Testcase"
+msgstr "Testfall erstellen"
+
+#: consumer/templates/base.html:61 consumer/templates/consumer/index.html:35
+#: consumer/templates/consumer/list_testcase.html:26
+#: consumer/templates/consumer/list_testcase.html:29
+msgid "List/Run Testcases"
+msgstr "Testfälle auflisten/ausführen"
+
+#: consumer/templates/base.html:77
+msgid "Switch"
+msgstr "Umschalten"
+
+#: consumer/templates/consumer/create_launch_param.html:26
+#: consumer/templates/consumer/create_launch_param.html:29
+#: consumer/templates/consumer/create_launch_param.html:67
+#: consumer/templates/consumer/show_testcase.html:90
+msgid "Create Launch Parameter"
+msgstr "Launchparameter erstellen"
+
+#: consumer/templates/consumer/create_launch_param.html:30
+msgid "Create a new Launch Parameter for the Testcase:"
+msgstr "Erstelle einen neuen Launchparameter für den Testfall:"
+
+#: consumer/templates/consumer/create_launch_param.html:43
+#: consumer/templates/consumer/create_launch_param.html:51
+#: consumer/templates/consumer/create_testcase.html:43
+#: consumer/templates/consumer/create_testcase.html:51
+#: consumer/templates/consumer/edit_launch_param.html:43
+#: consumer/templates/consumer/edit_launch_param.html:51
+#: consumer/templates/consumer/edit_testcase.html:43
+#: consumer/templates/consumer/edit_testcase.html:51
+msgid "Error: "
+msgstr "Fehler: "
+
+#: consumer/templates/consumer/create_launch_param.html:68
+#: consumer/templates/consumer/create_testcase.html:63
+#: consumer/templates/consumer/edit_launch_param.html:68
+#: consumer/templates/consumer/edit_testcase.html:63
+msgid "Chancel"
+msgstr "Abbrechen"
+
+#: consumer/templates/consumer/create_testcase.html:30
+msgid "Create a new Testcase for a LTI provider."
+msgstr "Erstelle einen neuen Testfall für einen LTI Anbieter."
+
+#: consumer/templates/consumer/edit_launch_param.html:26
+#: consumer/templates/consumer/edit_launch_param.html:29
+#: consumer/templates/consumer/edit_launch_param.html:67
+msgid "Edit Launch Parameter"
+msgstr "Launchparameter bearbeiten"
+
+#: consumer/templates/consumer/edit_launch_param.html:30
+msgid "Edit a Launch Parameter for the Testcase:"
+msgstr "Einen Launchparameter bearbeiten für den Testfall:"
+
+#: consumer/templates/consumer/edit_testcase.html:26
+#: consumer/templates/consumer/edit_testcase.html:29
+#: consumer/templates/consumer/edit_testcase.html:62
+msgid "Edit Testcase"
+msgstr "Testfall bearbeiten"
+
+#: consumer/templates/consumer/index.html:30
+msgid "This is a local LTI Consumer to test LTI Providers."
+msgstr "Das ist ein lokaler LTI Konsument zum testen von LTI Anbietern."
+
+#: consumer/templates/consumer/list_testcase.html:30
+msgid "List/Run Testcases for a LTI provider."
+msgstr "Testfälle für einen LTI Anbieter auflisten/ausführen."
+
+#: consumer/templates/consumer/list_testcase.html:40
+#: consumer/templates/consumer/list_testcase.html:48
+#: consumer/templates/consumer/show_testcase.html:69
+#: consumer/templates/consumer/show_testcase.html:97
+#: consumer/templates/consumer/show_testcase.html:105
+msgid "Actions"
+msgstr "Aktionen"
+
+#: consumer/templates/consumer/list_testcase.html:49
+msgid "Show/Run"
+msgstr "Anzeigen/Ausführen"
+
+#: consumer/templates/consumer/list_testcase.html:50
+#: consumer/templates/consumer/show_testcase.html:73
+#: consumer/templates/consumer/show_testcase.html:106
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: consumer/templates/consumer/list_testcase.html:51
+#: consumer/templates/consumer/show_testcase.html:75
+#: consumer/templates/consumer/show_testcase.html:107
+msgid "Delete"
+msgstr "Löschen"
+
+#: consumer/templates/consumer/show_testcase.html:71
+msgid "Run"
+msgstr "Ausführen"
+
+#: consumer/templates/consumer/show_testcase.html:76
+msgid "Copy"
+msgstr "Kopieren"

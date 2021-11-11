@@ -56,8 +56,27 @@ This is the base template for the LTI consumer.
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <a href="{% url 'consumer.views.create_testcase' %}" class="btn btn-primary navbar-btn">{% trans "Create Testcase" %}</a>
-                    <a href="{% url 'consumer.views.list_testcase' %}" class="btn btn-primary navbar-btn">{% trans "List/Run Testcases" %}</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'consumer.views.create_testcase' %}">{% trans "Create Testcase" %}</a></li>
+                    <li><a href="{% url 'consumer.views.list_testcase' %}">{% trans "List/Run Testcases" %}</a></li>
+                </ul>
+                <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    <ul class="nav navbar-nav navbar-right">
+                    <li style="padding-top: 13px">
+                    <select name="language">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                {{ language.name_local }} ({{ language.code }})
+                            </option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="{% trans "Switch" %}" class="btn btn-primary"></li>
+                    </ul>
+                </form>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>

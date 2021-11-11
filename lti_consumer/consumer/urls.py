@@ -22,7 +22,7 @@
 This the url configuration for the LTI consumer.
 '''
 
-from django.conf.urls import url
+from django.conf.urls import url, include
 from consumer.views import *
 
 
@@ -48,4 +48,5 @@ urlpatterns = [
         name='consumer.views.delete_launch_param'),
     url(r'^testcase/(?P<testcase_id>\d+)/copy$', copy_testcase,
         name='consumer.views.copy_testcase'),
+    url('i18n/', include('django.conf.urls.i18n')),
 ]
