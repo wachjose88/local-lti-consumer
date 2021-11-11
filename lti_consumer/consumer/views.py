@@ -215,3 +215,25 @@ def create_launch_param(request, testcase_id):
     params = {'form': form, 'testcase': testcase,
               'default_launch_params': default_launch_params}
     return render(request, 'consumer/create_launch_param.html', params)
+
+
+def copy_testcase(request, testcase_id):
+    '''
+    copy a testcase.
+
+    Keyword arguments:
+        request -- the calling HttpRequest
+        testcase_id -- id of the testcase to edit
+    '''
+    testcase = get_object_or_404(Testcase, id=testcase_id)
+    new_testcase = Testcase.objects.create(
+        name=testcase.name + ' (copy)',
+        launch_url=testcase.launch_url,
+        consumer_key=testcase.consumer_key,
+        consumer_secret=testcase.consumer_secret
+    )
+    for p in testcase.launchparam_set.all():
+        new_testcase.launchparam_set.create(name=p.name, value=p.value)
+
+    return HttpResponseRedirect(reverse('consumer.views.show_testcase',
+                                        args=(new_testcase.id,)))

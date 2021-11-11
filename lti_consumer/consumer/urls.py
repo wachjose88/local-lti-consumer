@@ -46,4 +46,6 @@ urlpatterns = [
     url(r'^testcase/(?P<testcase_id>\d+)/launch/param/(?P<launch_param_id>\d+)/delete$',
         delete_launch_param,
         name='consumer.views.delete_launch_param'),
+    url(r'^testcase/(?P<testcase_id>\d+)/copy$', copy_testcase,
+        name='consumer.views.copy_testcase'),
 ]
