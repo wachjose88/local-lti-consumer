@@ -1,7 +1,7 @@
 certifi
 chardet
-Django>=2.2.0,<2.3
-idna<3,>=2.5
+Django>=3.2.0,<3.3
+idna
 lti
 lxml
 oauthlib

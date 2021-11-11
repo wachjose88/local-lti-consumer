@@ -1,5 +1,7 @@
 # Local LTI Consumer
-This is a [LTI](https://www.imsglobal.org/activity/learning-tools-interoperability) consumer which can run on your local machine. It can be used to test LTI providers locally by writing testcases. It is based on [python3](https://www.python.org/) and [Django LTS](https://www.djangoproject.com/).
+This is a [LTI](https://www.imsglobal.org/activity/learning-tools-interoperability) consumer which can run 
+on your local machine. It can be used to test LTI providers locally by writing testcases. 
+It is based on [python3](https://www.python.org/) and [Django LTS 3.2](https://www.djangoproject.com/).
 
 ## Requirements
 Please see requirements.txt
@@ -17,11 +19,13 @@ Now create a database:
 python3 manage.py migrate
 ```
 
-Finally run the server. It is important to specify a local port by replacing PORT. This port must be different from the port used for the LTI provider you want to test.
+Finally run the server. It is important to specify a local port by replacing PORT. This port 
+must be different from the port used for the LTI provider you want to test.
 
 ```
 python3 manage.py runserver PORT
 ```
 
 ## Usage
-Open http://127.0.0.1:PORT with your web browser and start by creating a testcase. After that you have to add some launch parameters and finally you can run the testcase.
+Open [http://127.0.0.1:PORT](http://127.0.0.1:PORT) with your web browser and start by creating a testcase. 
+After that you have to add some launch parameters and finally you can run the testcase.
