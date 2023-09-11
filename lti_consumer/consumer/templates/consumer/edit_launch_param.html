@@ -23,11 +23,11 @@ SOFTWARE.
 This template shows the form to edit a launch parameter.
 {% endcomment %}
 {% load i18n %}
-{% block title %}{% trans "Edit Launch Parameter" %}{% endblock %}
+{% block title %}{% translate "Edit Launch Parameter" %}{% endblock %}
 {% block content %}
     <div class="page-header">
-        <h1>{% trans "Edit Launch Parameter" %}</h1>
-        <p class="lead">{% trans "Edit a Launch Parameter for the Testcase:" %} {{ testcase.name }}</p>
+        <h1>{% translate "Edit Launch Parameter" %}</h1>
+        <p class="lead">{% translate "Edit a Launch Parameter for the Testcase:" %} {{ testcase.name }}</p>
     </div>
 
 
@@ -40,7 +40,7 @@ This template shows the form to edit a launch parameter.
                         {% if form.non_field_errors %}
                             {% for error in form.non_field_errors %}
                                 <div class="alert alert-danger" role="alert">
-                                    <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% trans "Error: " %}</strong>
+                                    <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% translate "Error: " %}</strong>
                                     {{ error|escape }}</div>
                             {% endfor %}
                         {% endif %}
@@ -48,7 +48,7 @@ This template shows the form to edit a launch parameter.
                             {% if field.errors %}
                                 {% for error in field.errors %}
                                     <div class="alert alert-danger" role="alert">
-                                        <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% trans "Error: " %}</strong>
+                                        <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% translate "Error: " %}</strong>
                                         {{ error|escape }}</div>
                                 {% endfor %}
                             {% endif %}
@@ -64,8 +64,8 @@ This template shows the form to edit a launch parameter.
                                 <option value="{{ lp.name }}">
                             {% endfor %}
                         </datalist>
-                        <input type="submit" value="{% trans "Edit Launch Parameter" %}" class="btn btn-success btn-lg" />
-                        <input type="reset" value="{% trans "Chancel" %}" class="btn btn-warning btn-lg" />
+                        <input type="submit" value="{% translate "Edit Launch Parameter" %}" class="btn btn-success btn-lg" />
+                        <input type="reset" value="{% translate "Chancel" %}" class="btn btn-warning btn-lg" />
                     </form>
                 </div>
             </div>

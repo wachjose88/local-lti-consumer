@@ -26,13 +26,13 @@ This template shows a landing page for the LTI consumer.
 {% block title %}Home{% endblock %}
 {% block content %}
 <div class="jumbotron">
-    <h1>{% trans "LTI Consumer" %}</h1>
-    <p>{% trans "This is a local LTI Consumer to test LTI Providers." %}</p>
+    <h1>{% translate "LTI Consumer" %}</h1>
+    <p>{% translate "This is a local LTI Consumer to test LTI Providers." %}</p>
     <p>
         <a class="btn btn-primary btn-lg" href="{% url 'consumer.views.create_testcase' %}" role="button">
-            {% trans "Create Testcase" %}</a>
+            {% translate "Create Testcase" %}</a>
         <a class="btn btn-primary btn-lg" href="{% url 'consumer.views.list_testcase' %}" role="button">
-            {% trans "List/Run Testcases" %}</a>
+            {% translate "List/Run Testcases" %}</a>
     </p>
 </div>
 {% endblock %}

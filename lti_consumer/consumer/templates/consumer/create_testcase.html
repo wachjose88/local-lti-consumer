@@ -23,11 +23,11 @@ SOFTWARE.
 This template shows a form to create a testcase. 
 {% endcomment %}
 {% load i18n %}
-{% block title %}{% trans "Create Testcase" %}{% endblock %}
+{% block title %}{% translate "Create Testcase" %}{% endblock %}
 {% block content %}
     <div class="page-header">
-        <h1>{% trans "Create Testcase" %}</h1>
-        <p class="lead">{% trans "Create a new Testcase for a LTI provider." %}</p>
+        <h1>{% translate "Create Testcase" %}</h1>
+        <p class="lead">{% translate "Create a new Testcase for a LTI provider." %}</p>
     </div>
 
 
@@ -40,7 +40,7 @@ This template shows a form to create a testcase.
                         {% if form.non_field_errors %}
                             {% for error in form.non_field_errors %}
                                 <div class="alert alert-danger" role="alert">
-                                    <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% trans "Error: " %}</strong>
+                                    <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% translate "Error: " %}</strong>
                                     {{ error|escape }}</div>
                             {% endfor %}
                         {% endif %}
@@ -48,7 +48,7 @@ This template shows a form to create a testcase.
                             {% if field.errors %}
                                 {% for error in field.errors %}
                                     <div class="alert alert-danger" role="alert">
-                                        <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% trans "Error: " %}</strong>
+                                        <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% translate "Error: " %}</strong>
                                         {{ error|escape }}</div>
                                 {% endfor %}
                             {% endif %}
@@ -59,8 +59,8 @@ This template shows a form to create a testcase.
                             </div>
                             <br />
                         {% endfor %}
-                        <input type="submit" value="{% trans "Create Testcase" %}" class="btn btn-success btn-lg" />
-                        <input type="reset" value="{% trans "Chancel" %}" class="btn btn-warning btn-lg" />
+                        <input type="submit" value="{% translate "Create Testcase" %}" class="btn btn-success btn-lg" />
+                        <input type="reset" value="{% translate "Chancel" %}" class="btn btn-warning btn-lg" />
                     </form>
                 </div>
             </div>

@@ -22,31 +22,32 @@
 This the url configuration for the LTI consumer.
 '''
 
-from django.conf.urls import url, include
+from django.conf.urls import include
+from django.urls import re_path
 from consumer.views import *
 
 
 urlpatterns = [
-    url(r'^$', index, name='consumer.views.index'),
-    url(r'^testcase/create$', create_testcase,
+    re_path(r'^$', index, name='consumer.views.index'),
+    re_path(r'^testcase/create$', create_testcase,
         name='consumer.views.create_testcase'),
-    url(r'^testcase/(?P<testcase_id>\d+)$', show_testcase,
+    re_path(r'^testcase/(?P<testcase_id>\d+)$', show_testcase,
         name='consumer.views.show_testcase'),
-    url(r'^testcase/(?P<testcase_id>\d+)/edit$', edit_testcase,
+    re_path(r'^testcase/(?P<testcase_id>\d+)/edit$', edit_testcase,
         name='consumer.views.edit_testcase'),
-    url(r'^testcase/(?P<testcase_id>\d+)/delete$', delete_testcase,
+    re_path(r'^testcase/(?P<testcase_id>\d+)/delete$', delete_testcase,
         name='consumer.views.delete_testcase'),
-    url(r'^testcase/$', list_testcase,
+    re_path(r'^testcase/$', list_testcase,
         name='consumer.views.list_testcase'),
-    url(r'^testcase/(?P<testcase_id>\d+)/launch/param$', create_launch_param,
+    re_path(r'^testcase/(?P<testcase_id>\d+)/launch/param$', create_launch_param,
         name='consumer.views.create_launch_param'),
-    url(r'^testcase/(?P<testcase_id>\d+)/launch/param/(?P<launch_param_id>\d+)/edit$',
+    re_path(r'^testcase/(?P<testcase_id>\d+)/launch/param/(?P<launch_param_id>\d+)/edit$',
         edit_launch_param,
         name='consumer.views.edit_launch_param'),
-    url(r'^testcase/(?P<testcase_id>\d+)/launch/param/(?P<launch_param_id>\d+)/delete$',
+    re_path(r'^testcase/(?P<testcase_id>\d+)/launch/param/(?P<launch_param_id>\d+)/delete$',
         delete_launch_param,
         name='consumer.views.delete_launch_param'),
-    url(r'^testcase/(?P<testcase_id>\d+)/copy$', copy_testcase,
+    re_path(r'^testcase/(?P<testcase_id>\d+)/copy$', copy_testcase,
         name='consumer.views.copy_testcase'),
-    url('i18n/', include('django.conf.urls.i18n')),
+    re_path('i18n/', include('django.conf.urls.i18n')),
 ]

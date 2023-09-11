@@ -23,10 +23,10 @@ SOFTWARE.
 This template shows the form to edit a testcase. 
 {% endcomment %}
 {% load i18n %}
-{% block title %}{% trans "Edit Testcase" %}{% endblock %}
+{% block title %}{% translate "Edit Testcase" %}{% endblock %}
 {% block content %}
     <div class="page-header">
-        <h1>{% trans "Edit Testcase" %}</h1>
+        <h1>{% translate "Edit Testcase" %}</h1>
         <p class="lead">{{ testcase.name|truncatechars:42 }}</p>
     </div>
 
@@ -40,7 +40,7 @@ This template shows the form to edit a testcase.
                         {% if form.non_field_errors %}
                             {% for error in form.non_field_errors %}
                                 <div class="alert alert-danger" role="alert">
-                                    <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% trans "Error: " %}</strong>
+                                    <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% translate "Error: " %}</strong>
                                     {{ error|escape }}</div>
                             {% endfor %}
                         {% endif %}
@@ -48,7 +48,7 @@ This template shows the form to edit a testcase.
                             {% if field.errors %}
                                 {% for error in field.errors %}
                                     <div class="alert alert-danger" role="alert">
-                                        <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% trans "Error: " %}</strong>
+                                        <strong><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {% translate "Error: " %}</strong>
                                         {{ error|escape }}</div>
                                 {% endfor %}
                             {% endif %}
@@ -59,8 +59,8 @@ This template shows the form to edit a testcase.
                             </div>
                             <br />
                         {% endfor %}
-                        <input type="submit" value="{% trans "Edit Testcase" %}" class="btn btn-success btn-lg" />
-                        <input type="reset" value="{% trans "Chancel" %}" class="btn btn-warning btn-lg" />
+                        <input type="submit" value="{% translate "Edit Testcase" %}" class="btn btn-success btn-lg" />
+                        <input type="reset" value="{% translate "Chancel" %}" class="btn btn-warning btn-lg" />
                     </form>
                 </div>
             </div>

@@ -23,23 +23,23 @@ SOFTWARE.
 This template shows a testcase and its launch parameters. 
 {% endcomment %}
 {% load i18n %}
-{% block title %}{% trans "Testcase" %}: {{ testcase.name|truncatechars:42 }}{% endblock %}
+{% block title %}{% translate "Testcase" %}: {{ testcase.name|truncatechars:42 }}{% endblock %}
 {% block content %}
 
     <div class="page-header">
-        <h1>{% trans "Testcase" %}: {{ testcase.name|truncatechars:42 }}</h1>
+        <h1>{% translate "Testcase" %}: {{ testcase.name|truncatechars:42 }}</h1>
     </div>
 
     <div class="row">
         <div class="col-md-8">
             <ul class="lead">
-                <li>{% trans "Published at" %}: {{ testcase.published_at }}</li>
-                <li>{% trans "Launch URL" %}: {{ testcase.launch_url }}</li>
+                <li>{% translate "Published at" %}: {{ testcase.published_at }}</li>
+                <li>{% translate "Launch URL" %}: {{ testcase.launch_url }}</li>
                 {% if testcase.consumer_key %}
-                    <li>{% trans "Consumer key" %}: {{ testcase.consumer_key }}</li>
+                    <li>{% translate "Consumer key" %}: {{ testcase.consumer_key }}</li>
                 {% endif %}
                 {% if testcase.consumer_secret %}
-                    <li>{% trans "Consumer secret" %}: {{ testcase.consumer_secret }}</li>
+                    <li>{% translate "Consumer secret" %}: {{ testcase.consumer_secret }}</li>
                 {% endif %}
             </ul>
             {% if error_detail %}
@@ -66,14 +66,14 @@ This template shows a testcase and its launch parameters.
                     <input type="hidden" name="{{ key }}" value="{{ value }}"/>
                 {% endfor %}
             {% endif %}
-                <div class="btn-group-vertical btn-group-lg" role="group" aria-label="{% trans "Actions" %}">
+                <div class="btn-group-vertical btn-group-lg" role="group" aria-label="{% translate "Actions" %}">
                     {% if launch_url %}
-                    <button type="submit" class="btn btn-primary action-big">{% trans "Run" %}</button>
+                    <button type="submit" class="btn btn-primary action-big">{% translate "Run" %}</button>
                     {% endif %}
-                    <a class="btn btn-success action-big" href="{% url 'consumer.views.edit_testcase' testcase_id=testcase.id %}" role="button">{% trans "Edit" %}</a>
+                    <a class="btn btn-success action-big" href="{% url 'consumer.views.edit_testcase' testcase_id=testcase.id %}" role="button">{% translate "Edit" %}</a>
 
-                    <a class="btn btn-warning action-big" href="{% url 'consumer.views.delete_testcase' testcase_id=testcase.id %}" role="button">{% trans "Delete" %}</a>
-                    <a class="btn btn-success action-big" href="{% url 'consumer.views.copy_testcase' testcase_id=testcase.id %}" role="button">{% trans "Copy" %}</a>
+                    <a class="btn btn-warning action-big" href="{% url 'consumer.views.delete_testcase' testcase_id=testcase.id %}" role="button">{% translate "Delete" %}</a>
+                    <a class="btn btn-success action-big" href="{% url 'consumer.views.copy_testcase' testcase_id=testcase.id %}" role="button">{% translate "Copy" %}</a>
 
                 </div>
             <br /><br />
@@ -84,17 +84,17 @@ This template shows a testcase and its launch parameters.
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">{% trans "Launch Parameter" %}</h3>
+            <h3 class="panel-title">{% translate "Launch Parameter" %}</h3>
         </div>
         <div class="panel-body">
-            <a class="btn btn-success action-big" href="{% url 'consumer.views.create_launch_param' testcase_id=testcase.id %}" role="button">{% trans "Create Launch Parameter" %}</a>
+            <a class="btn btn-success action-big" href="{% url 'consumer.views.create_launch_param' testcase_id=testcase.id %}" role="button">{% translate "Create Launch Parameter" %}</a>
         </div>
         <table class="table">
             <tr>
                 <th>#</th>
-                <th>{% trans "Name" %}</th>
-                <th>{% trans "Value" %}</th>
-                <th>{% trans "Actions" %}</th>
+                <th>{% translate "Name" %}</th>
+                <th>{% translate "Value" %}</th>
+                <th>{% translate "Actions" %}</th>
             </tr>
                 {% for lp in testcase.launchparam_set.all %}
                     <tr>
@@ -102,9 +102,9 @@ This template shows a testcase and its launch parameters.
                         <td>{{ lp.name }}</td>
                         <td>{{ lp.value }}</td>
                         <td>
-                            <div class="btn-group btn-group-xs" role="group" aria-label="{% trans "Actions" %}">
-                                <a class="btn btn-success action-small" href="{% url 'consumer.views.edit_launch_param' testcase_id=testcase.id launch_param_id=lp.id %}" role="button">{% trans "Edit" %}</a>
-                                <a class="btn btn-warning action-small" href="{% url 'consumer.views.delete_launch_param' testcase_id=testcase.id launch_param_id=lp.id %}" role="button">{% trans "Delete" %}</a>
+                            <div class="btn-group btn-group-xs" role="group" aria-label="{% translate "Actions" %}">
+                                <a class="btn btn-success action-small" href="{% url 'consumer.views.edit_launch_param' testcase_id=testcase.id launch_param_id=lp.id %}" role="button">{% translate "Edit" %}</a>
+                                <a class="btn btn-warning action-small" href="{% url 'consumer.views.delete_launch_param' testcase_id=testcase.id launch_param_id=lp.id %}" role="button">{% translate "Delete" %}</a>
                             </div>
                         </td>
                     </tr>

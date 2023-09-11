@@ -29,7 +29,7 @@ This is the base template for the LTI consumer.
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}Home{% endblock %} - {% trans "LTI Consumer" %}</title>
+        <title>{% block title %}Home{% endblock %} - {% translate "LTI Consumer" %}</title>
 
         <!-- Bootstrap -->
         <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -52,13 +52,13 @@ This is the base template for the LTI consumer.
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{% url 'consumer.views.index' %}">{% trans "LTI Consumer" %}</a>
+                    <a class="navbar-brand" href="{% url 'consumer.views.index' %}">{% translate "LTI Consumer" %}</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'consumer.views.create_testcase' %}">{% trans "Create Testcase" %}</a></li>
-                    <li><a href="{% url 'consumer.views.list_testcase' %}">{% trans "List/Run Testcases" %}</a></li>
+                    <li><a href="{% url 'consumer.views.create_testcase' %}">{% translate "Create Testcase" %}</a></li>
+                    <li><a href="{% url 'consumer.views.list_testcase' %}">{% translate "List/Run Testcases" %}</a></li>
                 </ul>
                 <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
                     <input name="next" type="hidden" value="{{ redirect_to }}">
@@ -74,7 +74,7 @@ This is the base template for the LTI consumer.
                             </option>
                         {% endfor %}
                     </select>
-                    <input type="submit" value="{% trans "Switch" %}" class="btn btn-primary"></li>
+                    <input type="submit" value="{% translate "Switch" %}" class="btn btn-primary"></li>
                     </ul>
                 </form>
                 </div><!-- /.navbar-collapse -->

@@ -23,11 +23,11 @@ SOFTWARE.
 This template lists all testcases of the LTI consumer. 
 {% endcomment %}
 {% load i18n %}
-{% block title %}{% trans "List/Run Testcases" %}{% endblock %}
+{% block title %}{% translate "List/Run Testcases" %}{% endblock %}
 {% block content %}
     <div class="page-header">
-        <h1>{% trans "List/Run Testcases" %}</h1>
-        <p class="lead">{% trans "List/Run Testcases for a LTI provider." %}</p>
+        <h1>{% translate "List/Run Testcases" %}</h1>
+        <p class="lead">{% translate "List/Run Testcases for a LTI provider." %}</p>
     </div>
 
 
@@ -35,9 +35,9 @@ This template lists all testcases of the LTI consumer.
         <table class="table">
             <tr>
                 <th>#</th>
-                <th>{% trans "Testcases" %}</th>
-                <th>{% trans "Published at" %}</th>
-                <th>{% trans "Actions" %}</th>
+                <th>{% translate "Testcases" %}</th>
+                <th>{% translate "Published at" %}</th>
+                <th>{% translate "Actions" %}</th>
             </tr>
                 {% for tc in testcases %}
                     <tr>
@@ -45,10 +45,10 @@ This template lists all testcases of the LTI consumer.
                         <td>{{ tc.name|truncatechars:42 }}</td>
                         <td>{{ tc.published_at }}</td>
                         <td>
-                            <div class="btn-group btn-group-xs" role="group" aria-label="{% trans "Actions" %}">
-                                <a class="btn btn-primary action-small" href="{% url 'consumer.views.show_testcase' testcase_id=tc.id %}" role="button">{% trans "Show/Run" %}</a>
-                                <a class="btn btn-success action-small" href="{% url 'consumer.views.edit_testcase' testcase_id=tc.id %}" role="button">{% trans "Edit" %}</a>
-                                <a class="btn btn-warning action-small" href="{% url 'consumer.views.delete_testcase' testcase_id=tc.id %}" role="button">{% trans "Delete" %}</a>
+                            <div class="btn-group btn-group-xs" role="group" aria-label="{% translate "Actions" %}">
+                                <a class="btn btn-primary action-small" href="{% url 'consumer.views.show_testcase' testcase_id=tc.id %}" role="button">{% translate "Show/Run" %}</a>
+                                <a class="btn btn-success action-small" href="{% url 'consumer.views.edit_testcase' testcase_id=tc.id %}" role="button">{% translate "Edit" %}</a>
+                                <a class="btn btn-warning action-small" href="{% url 'consumer.views.delete_testcase' testcase_id=tc.id %}" role="button">{% translate "Delete" %}</a>
                             </div>
                         </td>
                     </tr>
